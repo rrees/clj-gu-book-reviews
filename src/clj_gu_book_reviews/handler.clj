@@ -8,7 +8,7 @@
 (def book-reviews-url "http://content.guardianapis.com/search?tag=type%2Farticle%2Ctone%2Freviews&section=books&page-size=20&format=json&show-fields=standfirst")
 
 (defn clean-title [item]
-	(assoc item :strippedTitle (.replaceFirst (:webTitle item) " . review", "")))
+	(assoc item :strippedTitle (.replaceFirst (:webTitle item) " . review$", "")))
 
 (defn retrieve-data []
 	(let [url (new java.net.URL book-reviews-url)
