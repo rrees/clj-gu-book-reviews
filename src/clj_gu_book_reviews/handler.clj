@@ -2,10 +2,20 @@
   (:use compojure.core)
   (:require [compojure.handler :as handler]
             [compojure.route :as route]
-            [clostache.parser :as moustache]))
+            [clostache.parser :as moustache]
+            [cheshire.core :as json]))
+
+(def book-reviews-url "http://content.guardianapis.com/search?tag=type%2Farticle%2Ctone%2Freviews&section=books&page-size=20&format=json&show-fields=standfirst")
+
+(defn retrieve-data []
+	(let [url (new java.net.URL book-reviews-url)
+		content (slurp (.getContent url))
+		json-data (json/parse-string content true)
+		results (get-in json-data [:response :results])]
+		{:reviews results}))
 
 (defroutes app-routes
-  (GET "/" [] (moustache/render-resource "templates/index.html" {:reviews [{:title "Murder Mile"} {:title "Slugs and lettuces"}]}))
+  (GET "/" [] (moustache/render-resource "templates/index.html" (retrieve-data)))
   (route/resources "/static/")
   (route/not-found "Not Found"))
 

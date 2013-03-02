@@ -10,12 +10,12 @@
 	</head>
 	<body>
 		<article class="content">
-			<header><h1 class="page-heading alpha">Guardian book reviews</h1></header>
+			<header><h1 class="page-heading beta">Guardian book reviews</h1></header>
 			<ul class="reviews">
 				{{#reviews}}
-				<li>
-					<header><h1 class="review-heading beta">{{title}}</h1></header>
-					<p>Review text</p>
+				<li class="review">
+					<header><h1 class="review-heading gamma">{{webTitle}}</h1></header>
+					<div class="review-standfirst">{{#fields}}{{standfirst}}{{/fields}}<br><span class="review-link">Link: <a href="{{webUrl}}">{{webTitle}}</a></span></div>
 				</li>
 				{{/reviews}}
 			</ul>

@@ -4,6 +4,10 @@ body {
 	font-family: Lato, sans-serif;
 }
 
+a {
+	color: #009ACD;
+}
+
 .heading {
 	font-family: Marcellus, sans-serif;
 }
@@ -17,4 +21,19 @@ body {
 .reviews {
 	margin-top: 1rem;
 	padding-top: 2rem;
+	list-style: none;
+	padding-left: 0.5rem;
+
+}
+
+.review {
+	padding-bottom: 2rem;
+}
+
+.review-standfirst {
+	padding-left: 1rem;
+}
+
+.review-link {
+	font-size: 75%;
 }
