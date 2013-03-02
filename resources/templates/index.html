@@ -1,0 +1,24 @@
+<!doctype HTML>
+
+<html>
+	<head>
+		<link href='http://fonts.googleapis.com/css?family=News+Cycle|Lato|Marcellus' rel='stylesheet' type='text/css'>
+
+		<link rel="stylesheet" href="/static/css/typeplate-unminified.css"/>
+		<link rel="stylesheet" href="/static/css/base.css"/>
+
+	</head>
+	<body>
+		<article class="content">
+			<header><h1 class="page-heading alpha">Guardian book reviews</h1></header>
+			<ul class="reviews">
+				{{#reviews}}
+				<li>
+					<header><h1 class="review-heading beta">{{title}}</h1></header>
+					<p>Review text</p>
+				</li>
+				{{/reviews}}
+			</ul>
+		</article>
+	</body>
+</html>
