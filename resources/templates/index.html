@@ -14,8 +14,8 @@
 			<ul class="reviews">
 				{{#reviews}}
 				<li class="review">
-					<header><h1 class="review-heading gamma">{{webTitle}}</h1></header>
-					<div class="review-standfirst">{{#fields}}{{standfirst}}{{/fields}}<br><span class="review-link">Link: <a href="{{webUrl}}">{{webTitle}}</a></span></div>
+					<header><h1 class="review-heading gamma">{{{strippedTitle}}}</h1></header>
+					<div class="review-standfirst">{{#fields}}{{{standfirst}}}{{/fields}}<br><span class="review-link">Link: <a href="{{webUrl}}">{{webTitle}}</a></span></div>
 				</li>
 				{{/reviews}}
 			</ul>
