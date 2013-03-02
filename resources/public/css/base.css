@@ -30,10 +30,21 @@ a {
 	padding-bottom: 2rem;
 }
 
-.review-standfirst {
+.review-standfirst, .review-book-author {
 	padding-left: 1rem;
+}
+
+.review-book-author {
+	font-style: italic;
 }
 
 .review-link {
 	font-size: 75%;
+}
+
+.review-author-search-link {
+	display:inline-block;
+	margin-left: 1rem;
+	font-size: 60%;
+	vertical-align: top;
 }
