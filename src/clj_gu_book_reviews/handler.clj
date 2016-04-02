@@ -5,7 +5,11 @@
             [clostache.parser :as moustache]
             [cheshire.core :as json]))
 
-(def book-reviews-url "http://content.guardianapis.com/search?tag=type%2Farticle%2Ctone%2Freviews&section=books&page-size=20&format=json&show-fields=standfirst")
+(def capi-key (System/getenv "CAPI_KEY"))
+
+(def book-reviews-url (str "http://content.guardianapis.com/search"
+	"?tag=type%2Farticle%2Ctone%2Freviews&section=books&page-size=40&format=json&show-fields=standfirst"
+	"&api-key=" capi-key))
 
 (defn clean-title [item]
 	(apply assoc item 
